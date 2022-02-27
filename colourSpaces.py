@@ -5,7 +5,7 @@ import cv2
 class Image:
     #overriding constructor
     #iscolour represents if image is colour (1) or black white (0)
-    def __init__(self,file, isColour=1):
+    def __init__(self,file,isColour=1):
         self.file = file
         self.img = cv2.imread(self.file, isColour) # matrix of vals
 
@@ -56,9 +56,9 @@ class ColourSpaces:
         return imgPrime.astype("uint8") #typecast back so can be displayed
 
 
-lena = Image("lena512color.tiff",1)
-test = ColourSpaces()
-(b,g,r) = test.extractBGRComponents(lena.img)
-(y,u,v) = test.rgb2YUV(r,g,b)
-vout = test.gammaCorrection(lena.img,5)
-lena.displayImage("gamma correction",vout)
+# lena = Image("lena512color.tiff",1)
+# test = ColourSpaces()
+# (b,g,r) = test.extractBGRComponents(lena.img)
+# (y,u,v) = test.rgb2YUV(r,g,b)
+# vout = test.gammaCorrection(lena.img,5)
+# lena.displayImage("gamma correction",vout)
