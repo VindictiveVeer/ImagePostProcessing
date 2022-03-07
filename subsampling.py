@@ -38,7 +38,18 @@ class Subsampling:
         return tech[self.technique]
 
     #subsampling method
-    #def subsample(self,img):
+    def subsample(self,img):
+        #setup vars
+        A = img.copy()
+        rows = A.shape[0]/2
+        cols = A.shape[1] * (self.b/4)
+        print(rows,cols)
+        #step thru rows and cols
+        # for row in range(0,rows):
+        #     top = 2 * row
+        #     bottom = top + 1
+        #     for col in range(0,cols):
 
-
+lena = Image("lena512color.tiff",1)
 x = Subsampling(4,2)
+x.subsample(lena.img)
